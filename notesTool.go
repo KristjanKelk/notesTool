@@ -13,6 +13,19 @@ func deleteNote(notes []string, index int) []string {
 }
 
 func loadNotes(collection string) []string {
+	// check if file exists
+	_, err := os.Stat(collection)
+
+	// create file if not exists
+	if os.IsNotExist(err) {
+		file, err := os.Create(collection)
+		if err != nil {
+			fmt.Println("Failed to create collection")
+			return []string{}
+		}
+		file.Close()
+	}
+
 	data, err := ioutil.ReadFile(collection)
 	if err != nil {
 		return []string{}
