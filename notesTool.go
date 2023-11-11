@@ -1,4 +1,4 @@
-package notestool
+package main
 
 import (
 	"bufio"
@@ -9,14 +9,14 @@ import (
 func main() {
 	toEncrypt, encoding, message := getInput()
 	if encoding == "1" {
-		fmt.Println(rot13Cryption(message, toEncrypt))
+		fmt.Println(message, toEncrypt)
 		// Command to call the encryption/decription function 1 and output the final code
 	} else if encoding == "2" {
-		fmt.Println(reverseString(message))
+		fmt.Println(message)
 	} else if encoding == "3" {
-		fmt.Println(reverseString(message))
+		fmt.Println(message)
 	} else if encoding == "4" {
-		fmt.Println(reverseString(message))
+		fmt.Println(message)
 	} /* else {
 		fmt.Println(customEncDec(message, toEncrypt))
 	}*/
@@ -27,15 +27,18 @@ func main() {
 func getInput() (toEncrypt bool, encoding string, message string) {
 	fmt.Println("Welcome to the notes tool!")
 	// Command for output of the welcome phrase
-	fmt.Println("Select operation (1/4):\n 1. Show notes. \n 2. Add a note. \n 3. Delete a note. \n 4. Exit")
+	fmt.Println("\n Select operation (1/4):\n 1. Show notes. \n 2. Add a note. \n 3. Delete a note. \n 4. Exit")
 	var SelectOp int
 	fmt.Scan(&SelectOp)
 	// what to do with notes
 	if SelectOp == 1 {
+		getInput()
 		//Show notes
 	} else if SelectOp == 2 {
+		getInput()
 		// add a note
 	} else if SelectOp == 3 {
+		getInput()
 		//deleteing a note
 	} else if SelectOp == 4 {
 		//Exit
