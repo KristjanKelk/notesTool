@@ -3,15 +3,34 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
 	"os"
+	"strings"
 )
 
 func deleteNote(notes []string, index int) []string {
 	return append(notes[:index], notes[index+1:]...)
 }
 
+func loadNotes(collection string) []string {
+	data, err := ioutil.ReadFile(collection)
+	if err != nil {
+		return []string{}
+	}
+	return strings.Split(string(data), "\n")
+}
+
+func saveNotes(collection string, notes []string) {
+	ioutil.WriteFile(collection, []byte(strings.Join(notes, "\n")), 0644)
+}
+
 func main() {
-	var notes []string
+	var collection string
+	fmt.Print("Enter the name of the collection: ")
+	fmt.Scan(&collection)
+
+	notes := loadNotes(collection)
+
 	fmt.Println("Welcome to notes tool. \nPlease enter only numerical values, example: 1")
 	for {
 
@@ -26,12 +45,14 @@ func main() {
 
 		switch choice {
 		case 1:
+			fmt.Println("")
 			fmt.Println("Notes:")
 			for i, note := range notes {
 				fmt.Printf("%03d - %s\n", i+1, note)
 			}
 		case 2:
 			var note string
+			fmt.Print("")
 			fmt.Print("Enter a note text: ")
 			scanner := bufio.NewScanner(os.Stdin)
 			if scanner.Scan() {
@@ -41,6 +62,7 @@ func main() {
 			}
 		case 3:
 			var index int
+			fmt.Println("")
 			fmt.Print("Enter the index of the note to delete: ")
 			fmt.Scan(&index)
 			if index >= 1 && index <= len(notes) {
@@ -50,8 +72,10 @@ func main() {
 				fmt.Println("Invalid index.")
 			}
 		case 4:
+			saveNotes(collection, notes)
 			os.Exit(0)
 		default:
+			fmt.Println("")
 			fmt.Println("Invalid choice. Please try again.")
 		}
 	}
