@@ -12,7 +12,9 @@ func deleteNote(notes []string, index int) []string {
 
 func main() {
 	var notes []string
+	fmt.Println("Welcome to notes tool. \nPlease enter only numerical values, example: 1")
 	for {
+
 		fmt.Println("\n1. Show notes")
 		fmt.Println("2. Add note")
 		fmt.Println("3. Delete note")
@@ -26,7 +28,7 @@ func main() {
 		case 1:
 			fmt.Println("Notes:")
 			for i, note := range notes {
-				fmt.Printf("%d. %s\n", i+1, note)
+				fmt.Printf("%03d - %s\n", i+1, note)
 			}
 		case 2:
 			var note string
