@@ -44,7 +44,7 @@ func main() {
 
 	notes := loadNotes(collection)
 
-	fmt.Println("Welcome to notes tool. \nPlease enter only numerical values, example: 1")
+	fmt.Println("Welcome to notes tool. \nWhen navigating, please enter only numerical values, example: 1")
 	for {
 
 		fmt.Println("\n1. Show notes")
