@@ -38,13 +38,15 @@ func saveNotes(collection string, notes []string) {
 }
 
 func main() {
-	var collection string
-	fmt.Print("Enter the name of the collection: ")
-	fmt.Scan(&collection)
+	if len(os.Args) < 2 {
+		fmt.Println("Please provide a collection name.")
+		os.Exit(1)
+	}
 
+	collection := os.Args[1]
 	notes := loadNotes(collection)
 
-	fmt.Println("Welcome to notes tool. \nWhen navigating, please enter only numerical values, example: 1")
+	fmt.Println("Welcome to notes tool. \nPlease enter only numerical values, example: 1")
 	for {
 
 		fmt.Println("\n1. Show notes")
