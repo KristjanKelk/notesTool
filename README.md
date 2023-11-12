@@ -37,6 +37,8 @@ The user interacts with the tool through a simple command-line interface. The to
     3. Delete note
     4. Exit
     Select operation: 1
+    Notes:
+    001 - qwe 
     
 
 2. **Add Note:**
@@ -47,6 +49,8 @@ The user interacts with the tool through a simple command-line interface. The to
     3. Delete note
     4. Exit
     Select operation: 2
+    Enter a note text: qwe
+    Note added successfully.
 
 
 3. **Delete Note:**
@@ -57,6 +61,8 @@ The user interacts with the tool through a simple command-line interface. The to
     3. Delete note
     4. Exit
     Select operation: 3
+    Enter the index of the note to delete: 1
+    Note deleted successfully.
 
 
 4. **Exit:**
