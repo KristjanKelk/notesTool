@@ -94,7 +94,11 @@ $
 
 - If the specified collection file does not exist, it is created.
 - Invalid user inputs are handled with appropriate error messages.
-
+```sh
+$ go run notesTool.go 
+Please provide a collection name.
+exit status 1
+```
 ## Running the Code
 
 Ensure you are in the correct directory and have the necessary permissions:
