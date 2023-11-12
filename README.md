@@ -28,52 +28,67 @@
 The user interacts with the tool through a simple command-line interface. The tool displays a menu with options to view, add, or delete notes. The user enters the corresponding numeric choice to perform the desired operation.
 
 ## Instructions
+Starting view:
+```sh
+Welcome to notes tool. 
+Please enter only numerical values, example: 1
+
+1. Show notes
+2. Add note
+3. Delete note
+4. Exit
+Select operation:
+```
 
 1. **Show Notes:**
    - Displays the existing notes in the collection with their respective indices.
-      ```sh
-    1. Show notes
-    2. Add note
-    3. Delete note
-    4. Exit
-    Select operation: 1
-    Notes:
-    001 - qwe 
+```sh
+1. Show notes
+2. Add note
+3. Delete note
+4. Exit
+Select operation: 1
+Notes:
+001 - qwe 
+```
     
 
 2. **Add Note:**
    - Prompts the user to enter a new note and adds it to the collection.
-      ```sh
-    1. Show notes
-    2. Add note
-    3. Delete note
-    4. Exit
-    Select operation: 2
-    Enter a note text: qwe
-    Note added successfully.
+```sh
+1. Show notes
+2. Add note
+3. Delete note
+4. Exit
+Select operation: 2
+Enter a note text: qwe
+Note added successfully.
+```
 
 
 3. **Delete Note:**
    - Asks the user for the index of the note to delete and removes it from the collection.
-      ```sh
-    1. Show notes
-    2. Add note
-    3. Delete note
-    4. Exit
-    Select operation: 3
-    Enter the index of the note to delete: 1
-    Note deleted successfully.
+```sh
+1. Show notes
+2. Add note
+3. Delete note
+4. Exit
+Select operation: 3
+Enter the index of the note to delete: 1
+Note deleted successfully.
+```
 
 
 4. **Exit:**
    - Saves the current notes to the collection file and exits the tool.
-   ```sh
-    1. Show notes
-    2. Add note
-    3. Delete note
-    4. Exit
-    Select operation: 4
-    $
+```sh
+1. Show notes
+2. Add note
+3. Delete note
+4. Exit
+Select operation: 4
+$
+```
 
 ## Error Handling
 
